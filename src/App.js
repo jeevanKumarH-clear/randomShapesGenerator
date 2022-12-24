@@ -12,23 +12,7 @@ const initialState = {
 		shape: 'square',
 		size: 'small',
 	},
-	histories: [
-		{
-			color: 'black',
-			shape: 'circle',
-			size: 'small',
-		},
-		{
-			color: 'black',
-			shape: 'square',
-			size: 'medium',
-		},
-		{
-			color: 'black',
-			shape: 'circle',
-			size: 'large',
-		},
-	],
+	histories: [],
 };
 
 const App = (context) => {
