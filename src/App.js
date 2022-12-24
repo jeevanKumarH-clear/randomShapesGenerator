@@ -1,13 +1,21 @@
 import { React, useState } from 'react';
 import './App.scss';
 import Buttons from './components/Buttons';
+import Display from './components/Display';
 
 const App = (context) => {
-	const [state, setState] = useState({ color: 'black' });
+	const [state, setState] = useState({
+		color: 'black',
+		shape: 'square',
+		size: 'small',
+	});
+
+	const extendedContext = { ...context, state, setState };
 
 	return (
 		<div className="App">
-			<Buttons { ...{ ...context, state, setState } }/>
+			<Buttons { ...extendedContext }/>
+			<Display { ...extendedContext }/>
 		</div>
 	);
 };

@@ -1,19 +1,15 @@
 import { React } from 'react';
-import Button from './Button';
+import ColorButton from './ColorButton';
+import ShapeButton from './ShapeButton';
+import SizeButton from './SizeButton';
 
-const Buttons = (context) => {
-	const { config, state } = context;
-
-	return (
+const Buttons = (context) =>
+	<div>
+		<ColorButton { ...context }/>
 		<div>
-			<div>{state.color}</div>
-			{config.colors.map((color, key) =>
-				<Button
-					key={ key }
-					{ ...{ ...context, color } }
-				/>)}
+			<ShapeButton { ...context }/>
 		</div>
-	);
-};
+		<SizeButton { ...context }/>
+	</div>;
 
 export default Buttons;
