@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import './App.scss';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
+import Shape from './components/Shape';
 
 const App = (context) => {
 	const [state, setState] = useState({
@@ -11,11 +12,13 @@ const App = (context) => {
 	});
 
 	const extendedContext = { ...context, state, setState };
+	const Shapes = Shape[state.shape];
 
 	return (
 		<div className="App">
 			<Buttons { ...extendedContext }/>
 			<Display { ...extendedContext }/>
+			<Shapes { ...extendedContext }/>
 		</div>
 	);
 };
