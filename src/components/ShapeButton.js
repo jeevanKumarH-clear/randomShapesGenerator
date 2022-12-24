@@ -1,15 +1,16 @@
 import { keys } from '@laufire/utils/lib';
 import React from 'react';
+import ShapeComponents from './ShapeComponents';
 
 const ShapeButton = (context) => {
-	const { config: { radius }, setState, state } = context;
+	const { setState, state } = context;
 	const { currentState } = state;
 
-	return keys(radius).map((shape, key) =>
+	return keys(ShapeComponents).map((shape, key) =>
 		<button
 			key={ key }
 			onClick={ () => setState({
-				currentState: { ...currentState, shape },
+				...state,	currentState: { ...currentState, shape },
 			}) }
 		>
 			{ shape }

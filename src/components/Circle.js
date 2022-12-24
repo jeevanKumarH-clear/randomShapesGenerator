@@ -2,7 +2,7 @@ import { React } from 'react';
 
 const Circle = (context) => {
 	const { config: { sizes },
-		state: { currentState: { color, size }}} = context;
+		data: { color, size }} = context;
 
 	return (
 		<div

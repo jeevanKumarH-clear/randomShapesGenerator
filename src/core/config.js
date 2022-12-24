@@ -5,10 +5,6 @@ const config = {
 		medium: 100,
 		large: 150,
 	},
-	radius: {
-		circle: 50,
-		square: 0,
-	},
 };
 
 export default config;

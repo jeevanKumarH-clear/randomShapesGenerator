@@ -9,7 +9,7 @@ const SizeButton = (context) => {
 		<button
 			key={ key }
 			onClick={ () => setState({
-				currentState: { ...currentState, size },
+				...state,	currentState: { ...currentState, size },
 			}) }
 		>{size}
 		</button>);

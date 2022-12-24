@@ -1,9 +1,11 @@
-import Circle from './Circle';
-import Square from './Square';
+import React from 'react';
+import ShapeComponents from './ShapeComponents';
 
-const Shape = {
-	circle: Circle,
-	square: Square,
+const Shape = (context) => {
+	const { data: { shape }} = context;
+	const Component = ShapeComponents[shape];
+
+	return <Component { ...context }/>;
 };
 
 export default Shape;

@@ -8,7 +8,7 @@ const ColorButton = (context) => {
 		<button
 			key={ key }
 			onClick={ () => setState({
-				currentState: { ...currentState, color },
+				...state, currentState: { ...currentState, color },
 			}) }
 		>{color}
 		</button>);

@@ -2,24 +2,45 @@ import { React, useState } from 'react';
 import './App.scss';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
-import Shape from './components/Shape';
+import ShapeComponents from './components/ShapeComponents';
+import Shapes from './components/Shapes';
 
-const App = (context) => {
-	const [state, setState] = useState({
-		currentState: {
+const initialState = {
+	currentState:
+	{
+		color: 'black',
+		shape: 'square',
+		size: 'small',
+	},
+	histories: [
+		{
 			color: 'black',
-			shape: 'square',
+			shape: 'circle',
 			size: 'small',
 		},
-	});
+		{
+			color: 'black',
+			shape: 'square',
+			size: 'medium',
+		},
+		{
+			color: 'black',
+			shape: 'circle',
+			size: 'large',
+		},
+	],
+};
 
+const App = (context) => {
+	const [state, setState] = useState(initialState);
 	const extendedContext = { ...context, state, setState };
-	const Shapes = Shape[state.currentState.shape];
+	const Shape = ShapeComponents[state.currentState.shape];
 
 	return (
 		<div className="App">
 			<Buttons { ...extendedContext }/>
 			<Display { ...extendedContext }/>
+			<Shape { ...{ ...extendedContext, data: state.currentState } }/>
 			<Shapes { ...extendedContext }/>
 		</div>
 	);
