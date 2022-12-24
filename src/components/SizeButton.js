@@ -3,11 +3,14 @@ import React from 'react';
 
 const SizeButton = (context) => {
 	const { config: { sizes }, setState, state } = context;
+	const { currentState } = state;
 
 	return keys(sizes).map((size, key) =>
 		<button
 			key={ key }
-			onClick={ () => setState({ ...state, size }) }
+			onClick={ () => setState({
+				currentState: { ...currentState, size },
+			}) }
 		>{size}
 		</button>);
 };

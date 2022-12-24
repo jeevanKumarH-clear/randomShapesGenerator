@@ -6,13 +6,15 @@ import Shape from './components/Shape';
 
 const App = (context) => {
 	const [state, setState] = useState({
-		color: 'black',
-		shape: 'square',
-		size: 'small',
+		currentState: {
+			color: 'black',
+			shape: 'square',
+			size: 'small',
+		},
 	});
 
 	const extendedContext = { ...context, state, setState };
-	const Shapes = Shape[state.shape];
+	const Shapes = Shape[state.currentState.shape];
 
 	return (
 		<div className="App">

@@ -2,7 +2,7 @@ import { React } from 'react';
 
 const Square = (context) => {
 	const { config: { sizes },
-		state: { color, size }} = context;
+		state: { currentState: { color, size }}} = context;
 
 	return (
 		<div style={ {

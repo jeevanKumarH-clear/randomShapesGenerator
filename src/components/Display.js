@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Display = (context) => {
-	const { state: { color, shape, size }} = context;
+	const { state: { currentState: { color, shape, size }}} = context;
 
 	return (
 		<div>
