@@ -5,6 +5,7 @@ const config = {
 		medium: 100,
 		large: 150,
 	},
+	idLength: 5,
 };
 
 export default config;

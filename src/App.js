@@ -24,7 +24,9 @@ const App = (context) => {
 		<div className="App">
 			<Buttons { ...extendedContext }/>
 			<Display { ...extendedContext }/>
-			<Shape { ...{ ...extendedContext, data: state.currentState } }/>
+			<div className="currentState">
+				<Shape { ...{ ...extendedContext, data: state.currentState } }/>
+			</div>
 			<Shapes { ...extendedContext }/>
 		</div>
 	);
