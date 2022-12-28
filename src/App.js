@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import './App.scss';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
+import SelectedShape from './components/SelectedShape';
 import ShapeComponents from './components/ShapeComponents';
 import Shapes from './components/Shapes';
 
@@ -13,7 +14,6 @@ const initialState = {
 		size: 'small',
 	},
 	histories: [],
-	selectedId: '',
 };
 
 const App = (context) => {
@@ -29,6 +29,7 @@ const App = (context) => {
 				<Shape { ...{ ...extendedContext, data: state.currentState } }/>
 			</div>
 			<Shapes { ...extendedContext }/>
+			<SelectedShape { ...extendedContext }/>
 		</div>
 	);
 };

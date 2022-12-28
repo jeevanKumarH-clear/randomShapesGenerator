@@ -11,6 +11,7 @@ const Shapes = (context) => {
 			onClick={ () => setState({
 				...state,
 				selectedId: history.id,
+				selectedShape: history,
 			}) }
 		>
 			<Shape
