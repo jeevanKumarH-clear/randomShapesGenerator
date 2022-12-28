@@ -1,13 +1,5 @@
-/* eslint-disable no-console */
 import React from 'react';
 import Shape from './Shape';
-
-const remove = (context) => {
-	const { state: { histories }, data } = context;
-	const temp = histories.filter((shape) => shape.id !== data.id);
-
-	return temp;
-};
 
 const Shapes = (context) => {
 	const { state, setState } = context;
@@ -18,7 +10,7 @@ const Shapes = (context) => {
 			key={ key }
 			onClick={ () => setState({
 				...state,
-				histories: remove({ ...context, data: history }),
+				selectedId: history.id,
 			}) }
 		>
 			<Shape

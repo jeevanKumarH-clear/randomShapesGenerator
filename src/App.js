@@ -13,6 +13,7 @@ const initialState = {
 		size: 'small',
 	},
 	histories: [],
+	selectedId: '',
 };
 
 const App = (context) => {
