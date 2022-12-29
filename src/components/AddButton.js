@@ -1,5 +1,5 @@
 import React from 'react';
-import getShape from '../services/getShape';
+import getShapeId from '../services/getShape';
 
 const AddButton = (context) => {
 	const { state, setState } = context;
@@ -8,7 +8,7 @@ const AddButton = (context) => {
 	return (
 		<button
 			onClick={ () => setState({ ...state,
-				histories: [...histories, getShape(context)] }) }
+				histories: [...histories, getShapeId(context)] }) }
 		>
 			Add
 		</button>);

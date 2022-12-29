@@ -1,9 +1,9 @@
 import { rndString } from '@laufire/utils/random';
 
-const getShape = ({ state: { currentState }, config: { idLength }}) =>
+const getShapeId = ({ state: { currentState }, config: { idLength }}) =>
 	({
 		...currentState,
 		id: rndString(idLength),
 	});
 
-export default getShape;
+export default getShapeId;
