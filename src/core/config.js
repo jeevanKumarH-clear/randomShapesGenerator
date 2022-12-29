@@ -1,5 +1,6 @@
 const config = {
 	colors: ['red', 'blue'],
+	shapes: ['circle', 'square'],
 	sizes: {
 		small: 50,
 		medium: 100,

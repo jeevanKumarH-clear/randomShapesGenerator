@@ -5,19 +5,15 @@ import Display from './components/Display';
 import SelectedShape from './components/SelectedShape';
 import ShapeComponents from './components/ShapeComponents';
 import Shapes from './components/Shapes';
+import getCurrentState from './services/getCurrentState';
 
-const initialState = {
-	currentState:
-	{
-		color: 'black',
-		shape: 'square',
-		size: 'small',
-	},
+const initialState = (context) => ({
+	currentState: getCurrentState(context),
 	histories: [],
-};
+});
 
 const App = (context) => {
-	const [state, setState] = useState(initialState);
+	const [state, setState] = useState(initialState(context));
 	const extendedContext = { ...context, state, setState };
 	const Shape = ShapeComponents[state.currentState.shape];
 
