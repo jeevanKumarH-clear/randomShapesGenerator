@@ -1,5 +1,5 @@
 import React from 'react';
-import getShapeId from '../services/getShape';
+import getShapeId from '../services/getShapeId';
 
 const AddButton = (context) => {
 	const { state, setState } = context;
