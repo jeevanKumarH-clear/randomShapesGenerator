@@ -5,10 +5,11 @@ const NewButton = (context) => {
 	const { state, setState } = context;
 
 	return (
-		<button onClick={ () => setState({
-			...state,
-			currentState: getCurrentState(context),
-		}) }
+		<button
+			onClick={ () => setState({
+				...state,
+				currentState: getCurrentState(context),
+			}) }
 		>
 			New
 		</button>);
