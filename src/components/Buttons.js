@@ -1,16 +1,16 @@
 import { React } from 'react';
 import AddButton from './AddButton';
-import ColorButton from './ColorButton';
+import ColorButtons from './ColorButtons';
 import DeleteButton from './DeleteButton';
 import NewButton from './NewButton';
-import ShapeButton from './ShapeButton';
-import SizeButton from './SizeButton';
+import ShapeButtons from './ShapeButtons';
+import SizeButtons from './SizeButtons';
 
 const Buttons = (context) =>
 	<div>
-		<div><ColorButton { ...context }/></div>
-		<div><ShapeButton { ...context }/></div>
-		<div><SizeButton { ...context }/></div>
+		<div><ColorButtons { ...context }/></div>
+		<div><ShapeButtons { ...context }/></div>
+		<div><SizeButtons { ...context }/></div>
 		<div><AddButton { ...context }/></div>
 		<div><DeleteButton { ...context }/></div>
 		<div><NewButton { ...context }/></div>

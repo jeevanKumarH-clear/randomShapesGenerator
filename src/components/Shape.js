@@ -1,9 +1,9 @@
 import React from 'react';
-import ShapeComponents from './ShapeComponents';
+import shapeComponents from '../data/shapeComponents';
 
 const Shape = (context) => {
 	const { data: { shape }} = context;
-	const Component = ShapeComponents[shape];
+	const Component = shapeComponents[shape];
 
 	return <Component { ...context }/>;
 };

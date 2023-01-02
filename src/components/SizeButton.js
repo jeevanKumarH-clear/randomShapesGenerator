@@ -1,18 +1,19 @@
-import { keys } from '@laufire/utils/lib';
 import React from 'react';
 
 const SizeButton = (context) => {
-	const { config: { sizes }, setState, state } = context;
+	const { state, setState, data: size } = context;
 	const { currentState } = state;
 
-	return keys(sizes).map((size, key) =>
+	return (
 		<button
-			key={ key }
 			onClick={ () => setState({
-				...state,	currentState: { ...currentState, size },
+				...state,
+				currentState: { ...currentState, size },
 			}) }
-		>{size}
-		</button>);
+		>
+			{size}
+		</button>
+	);
 };
 
 export default SizeButton;
