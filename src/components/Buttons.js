@@ -5,6 +5,7 @@ import DeleteButton from './DeleteButton';
 import NewButton from './NewButton';
 import ShapeButtons from './ShapeButtons';
 import SizeButtons from './SizeButtons';
+import UpdateButton from './UpdateButton';
 
 const Buttons = (context) =>
 	<div>
@@ -14,6 +15,7 @@ const Buttons = (context) =>
 		<div><AddButton { ...context }/></div>
 		<div><DeleteButton { ...context }/></div>
 		<div><NewButton { ...context }/></div>
+		<div><UpdateButton { ...context }/></div>
 	</div>;
 
 export default Buttons;
