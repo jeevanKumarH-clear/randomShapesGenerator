@@ -12,7 +12,7 @@ const SizeButton = (context) => {
 
 	return (
 		<button {
-			...{ className: isCurrentSize(context) ? 'highlight' : 'normal',
+			...{ className: isCurrentSize(context) && 'highlight',
 				onClick: () => setState({
 					...state,
 					currentShape: { ...currentShape, size },

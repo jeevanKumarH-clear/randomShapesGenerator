@@ -12,7 +12,7 @@ const ShapeButton = (context) => {
 
 	return (
 		<button {
-			...{ className: isCurrentShape(context) ? 'highlight' : 'normal',
+			...{ className: isCurrentShape(context) && 'highlight',
 				onClick: () => setState({
 					...state,
 					currentShape: { ...currentShape, shape },

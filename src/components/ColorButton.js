@@ -12,7 +12,7 @@ const ColorButton = (context) => {
 
 	return (
 		<button {
-			...{ className: isCurrentColor(context) ? 'highlight' : 'normal',
+			...{ className: isCurrentColor(context) && 'highlight',
 				onClick: () => setState({
 					...state,
 					currentShape: { ...currentShape, color },
