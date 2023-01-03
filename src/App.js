@@ -3,7 +3,7 @@ import './App.scss';
 import Box from './components/Box';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
-import Shapes from './components/Shapes';
+import ShapeValues from './components/ShapeValues';
 import getCurrentState from './services/getCurrentState';
 
 const initialState = (context) => ({
@@ -19,7 +19,7 @@ const App = (context) => {
 		<div className="App">
 			<Buttons { ...extendedContext }/>
 			<Display { ...extendedContext }/>
-			<Shapes { ...extendedContext }/>
+			<ShapeValues { ... extendedContext }/>
 			<Box { ...extendedContext }/>
 		</div>
 	);
