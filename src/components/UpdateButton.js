@@ -1,14 +1,17 @@
 import React from 'react';
+import isItemSelected from '../services/isItemSelected';
 import updateShape from '../services/updateShape';
 
 const UpdateButton = (context) => {
 	const { state, setState } = context;
 
 	return (
-		<button onClick={ () => setState({
-			...state,
-			histories: updateShape(context),
-		}) }
+		<button
+			disabled={ isItemSelected(context) }
+			onClick={ () => setState({
+				...state,
+				histories: updateShape(context),
+			}) }
 		>
 			Update
 		</button>);
