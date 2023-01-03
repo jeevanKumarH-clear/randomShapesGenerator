@@ -1,4 +1,4 @@
 
-const isItemSelected = ({ state: { currentState: { id }}}) => !id;
+const isItemSelected = ({ state: { currentShape: { id }}}) => !id;
 
 export default isItemSelected;

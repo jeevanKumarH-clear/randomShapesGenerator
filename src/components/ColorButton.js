@@ -1,21 +1,21 @@
 import React from 'react';
 
 const isCurrentColor = (context) => {
-	const { state: { currentState }, data: color } = context;
+	const { state: { currentShape }, data: color } = context;
 
-	return currentState.color === color ;
+	return currentShape.color === color ;
 };
 
 const ColorButton = (context) => {
 	const { setState, state, data: color } = context;
-	const { currentState } = state;
+	const { currentShape } = state;
 
 	return (
 		<button {
 			...{ className: isCurrentColor(context) ? 'highlight' : 'normal',
 				onClick: () => setState({
 					...state,
-					currentState: { ...currentState, color },
+					currentShape: { ...currentShape, color },
 				}) } }
 		>{color}
 		</button>);

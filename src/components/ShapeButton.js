@@ -1,21 +1,21 @@
 import React from 'react';
 
 const isCurrentShape = (context) => {
-	const { state: { currentState }, data: shape } = context;
+	const { state: { currentShape }, data: shape } = context;
 
-	return currentState.shape === shape ;
+	return currentShape.shape === shape ;
 };
 
 const ShapeButton = (context) => {
 	const { setState, state, data: shape } = context;
-	const { currentState } = state;
+	const { currentShape } = state;
 
 	return (
 		<button {
 			...{ className: isCurrentShape(context) ? 'highlight' : 'normal',
 				onClick: () => setState({
 					...state,
-					currentState: { ...currentState, shape },
+					currentShape: { ...currentShape, shape },
 				}) } }
 		>
 			{ shape }

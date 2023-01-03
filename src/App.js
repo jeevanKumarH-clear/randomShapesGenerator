@@ -4,10 +4,10 @@ import Box from './components/Box';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
 import ShapeValues from './components/ShapeValues';
-import getCurrentState from './services/getCurrentState';
+import getCurrentShape from './services/getCurrentShape';
 
 const initialState = (context) => ({
-	currentState: getCurrentState(context),
+	currentShape: getCurrentShape(context),
 	histories: [],
 });
 

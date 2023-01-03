@@ -2,12 +2,12 @@ import React from 'react';
 import Shape from './Shape';
 
 const Box = (context) => {
-	const { state: { currentState }} = context;
+	const { state: { currentShape }} = context;
 
 	return (
 		<div className="box">
-			<div className="currentState">
-				<Shape { ...{ ...context, data: currentState } }/>
+			<div className="currentShape">
+				<Shape { ...{ ...context, data: currentShape } }/>
 			</div>
 		</div>
 	);

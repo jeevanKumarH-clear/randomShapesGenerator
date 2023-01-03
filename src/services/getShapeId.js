@@ -1,8 +1,8 @@
 import { rndString } from '@laufire/utils/random';
 
-const getShapeId = ({ state: { currentState }, config: { idLength }}) =>
+const getShapeId = ({ state: { currentShape }, config: { idLength }}) =>
 	({
-		...currentState,
+		...currentShape,
 		id: rndString(idLength),
 	});
 

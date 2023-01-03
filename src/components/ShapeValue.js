@@ -3,7 +3,7 @@ import Shape from './Shape';
 
 const isActive = (context) => {
 	const { state:
-		{ currentState: { id: currentShape }}, data: { id }} = context;
+		{ currentShape: { id: currentShape }}, data: { id }} = context;
 
 	return id === currentShape;
 };
@@ -18,7 +18,7 @@ const ShapeValue = (context) => {
 				onClick: () => setState({
 					...state,
 					selectedId: history.id,
-					currentState: history,
+					currentShape: history,
 				}) } }
 		>
 			<Shape { ...{ ...context, data: history } }/>

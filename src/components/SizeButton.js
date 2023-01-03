@@ -1,21 +1,21 @@
 import React from 'react';
 
 const isCurrentSize = (context) => {
-	const { state: { currentState }, data: size } = context;
+	const { state: { currentShape }, data: size } = context;
 
-	return currentState.size === size ;
+	return currentShape.size === size ;
 };
 
 const SizeButton = (context) => {
 	const { state, setState, data: size } = context;
-	const { currentState } = state;
+	const { currentShape } = state;
 
 	return (
 		<button {
 			...{ className: isCurrentSize(context) ? 'highlight' : 'normal',
 				onClick: () => setState({
 					...state,
-					currentState: { ...currentState, size },
+					currentShape: { ...currentShape, size },
 				}) } }
 		>
 			{size}
