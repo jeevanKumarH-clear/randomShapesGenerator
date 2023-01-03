@@ -4,8 +4,14 @@ import ShapeValue from './ShapeValue';
 const ShapeValues = (context) => {
 	const { state: { histories }} = context;
 
-	return histories.map((history, key) =>
-		<ShapeValue key={ key } { ...{ ...context, data: history } }/>);
+	return (
+		<div className="container">
+			{ histories.map((history, key) =>
+				<ShapeValue
+					key={ key }
+					{ ...{ ...context, data: history } }
+				/>)}
+		</div>);
 };
 
 export default ShapeValues;
