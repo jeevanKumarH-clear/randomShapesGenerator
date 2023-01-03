@@ -12,7 +12,10 @@ const ShapeValue = (context) => {
 
 	return (
 		<div
-			style={ { width: sizes[history.size] } }
+			style={ {
+				width: sizes[history.size],
+				marginTop: '5%',
+			} }
 			{
 				...{ className: isActive(context)
 				&& 'histories',
