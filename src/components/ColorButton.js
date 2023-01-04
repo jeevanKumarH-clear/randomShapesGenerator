@@ -1,4 +1,5 @@
 import React from 'react';
+import ColorButtons from './ColorButtons';
 
 const isCurrentColor = (context) => {
 	const { state: { currentShape }, data: color } = context;
@@ -7,18 +8,22 @@ const isCurrentColor = (context) => {
 };
 
 const ColorButton = (context) => {
-	const { setState, state, data: color } = context;
+	const { setState, state } = context;
 	const { currentShape } = state;
 
 	return (
-		<button {
+		<select {
 			...{ className: isCurrentColor(context) && 'highlight',
-				onClick: () => setState({
+				onChange: (event) => setState({
 					...state,
-					currentShape: { ...currentShape, color },
+					currentShape: {
+						...currentShape,
+						color: event.target.value,
+
+					},
 				}) } }
-		>{color}
-		</button>);
+		><ColorButtons { ...context }/>
+		</select>);
 };
 
 export default ColorButton;

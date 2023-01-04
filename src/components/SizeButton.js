@@ -1,4 +1,5 @@
 import React from 'react';
+import SizeButtons from './SizeButtons';
 
 const isCurrentSize = (context) => {
 	const { state: { currentShape }, data: size } = context;
@@ -7,19 +8,19 @@ const isCurrentSize = (context) => {
 };
 
 const SizeButton = (context) => {
-	const { state, setState, data: size } = context;
+	const { state, setState } = context;
 	const { currentShape } = state;
 
 	return (
-		<button {
+		<select {
 			...{ className: isCurrentSize(context) && 'highlight',
-				onClick: () => setState({
+				onChange: (event) => setState({
 					...state,
-					currentShape: { ...currentShape, size },
+					currentShape: { ...currentShape, size: event.target.value },
 				}) } }
 		>
-			{size}
-		</button>
+			<SizeButtons { ...context }/>
+		</select>
 	);
 };
 

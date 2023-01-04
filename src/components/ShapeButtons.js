@@ -1,13 +1,9 @@
 import { keys } from '@laufire/utils/lib';
 import React from 'react';
-import ShapeButton from './ShapeButton';
 import shapeComponents from '../data/shapeComponents';
 
-const ShapeButtons = (context) =>
+const ShapeButtons = () =>
 	keys(shapeComponents).map((shape, key) =>
-		<ShapeButton
-			key={ key }
-			{ ...{ ...context, data: shape } }
-		/>);
+		<option key={ key } value={ shape }> { shape} </option>);
 
 export default ShapeButtons;

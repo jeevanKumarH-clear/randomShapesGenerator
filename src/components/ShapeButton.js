@@ -1,4 +1,5 @@
 import React from 'react';
+import ShapeButtons from './ShapeButtons';
 
 const isCurrentShape = (context) => {
 	const { state: { currentShape }, data: shape } = context;
@@ -7,19 +8,22 @@ const isCurrentShape = (context) => {
 };
 
 const ShapeButton = (context) => {
-	const { setState, state, data: shape } = context;
+	const { setState, state } = context;
 	const { currentShape } = state;
 
 	return (
-		<button {
+		<select {
 			...{ className: isCurrentShape(context) && 'highlight',
-				onClick: () => setState({
+				onChange: (event) => setState({
 					...state,
-					currentShape: { ...currentShape, shape },
+					currentShape: {
+						...currentShape,
+						shape: event.target.value,
+					},
 				}) } }
 		>
-			{ shape }
-		</button>
+			<ShapeButtons { ...context }/>
+		</select>
 	);
 };
 
