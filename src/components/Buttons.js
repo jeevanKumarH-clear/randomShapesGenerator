@@ -9,7 +9,7 @@ import SizeButton from './SizeButton';
 import UpdateButton from './UpdateButton';
 
 const Buttons = (context) =>
-	<div>
+	<div className="buttons">
 		<div><ColorButton { ...context }/></div>
 		<div><ShapeButton { ...context }/></div>
 		<div><SizeButton { ...context }/></div>

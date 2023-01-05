@@ -7,6 +7,9 @@ const config = {
 		large: 150,
 	},
 	idLength: 5,
+	filterShapes: ['any', 'circle', 'square'],
+	filterColors: ['any', 'red', 'blue'],
+	filterSizes: ['any', 'small', 'medium', 'large'],
 };
 
 export default config;
