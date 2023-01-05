@@ -12,15 +12,15 @@ const ColorFilterButton = (context) => {
 	const { filteredShape } = state;
 
 	return (
-		<select {
-			...{ 	onChange: (event) => setState({
-				...state,
-				filteredShape: {
-					...filteredShape,
-					color: event.target.value,
-				},
-			}) } }
-		><ColorButtons { ...context }/>
+		<select	onChange={ (event) => setState({
+			...state,
+			filteredShape: {
+				...filteredShape,
+				color: event.target.value,
+			},
+		}) }
+		>
+			<ColorButtons { ...context }/>
 		</select>);
 };
 

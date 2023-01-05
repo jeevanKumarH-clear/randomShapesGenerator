@@ -12,14 +12,13 @@ const ShapeFilterButton = (context) => {
 	const { filteredShape } = state;
 
 	return (
-		<select {
-			...{ onChange: (event) => setState({
-				...state,
-				filteredShape: {
-					...filteredShape,
-					shape: event.target.value,
-				},
-			}) } }
+		<select onChange={ (event) => setState({
+			...state,
+			filteredShape: {
+				...filteredShape,
+				shape: event.target.value,
+			},
+		}) }
 		>
 			<ShapeButtons { ...context }/>
 		</select>

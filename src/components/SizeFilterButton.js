@@ -12,14 +12,13 @@ const SizeFilterButton = (context) => {
 	const { filteredShape } = state;
 
 	return (
-		<select {
-			...{ onChange: (event) => setState({
-				...state,
-				filteredShape: {
-					...filteredShape,
-					size: event.target.value,
-				},
-			}) } }
+		<select onChange={ (event) => setState({
+			...state,
+			filteredShape: {
+				...filteredShape,
+				size: event.target.value,
+			},
+		}) }
 		>
 			<SizeButtons { ...context }/>
 		</select>
