@@ -7,9 +7,23 @@ const Colors = (context) => {
 		<option key={ key } value={ color }> { color} </option>);
 };
 
-const ColorSelector = (context) =>
-	<select>
-		<Colors { ...context }/>
-	</select>;
+const ColorSelector = (context) => {
+	const { setState, state } = context;
+	const { filter } = state;
+
+	return (
+		<select
+			value={ filter.color }
+			onChange={ (event) => setState({
+				...state,
+				filter: {
+					...filter,
+					color: event.target.value,
+				},
+			}) }
+		>
+			<Colors { ...context }/>
+		</select>);
+};
 
 export default ColorSelector;

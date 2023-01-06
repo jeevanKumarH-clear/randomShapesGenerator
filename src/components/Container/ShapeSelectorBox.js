@@ -7,6 +7,7 @@ const isActive = (context) => {
 
 	return id === currentShape;
 };
+
 const ShapeSelectorBox = (context) => {
 	const { state, setState, data: history, config: { sizes }} = context;
 

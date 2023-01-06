@@ -1,15 +1,20 @@
 import { React, useState } from 'react';
 import './App.scss';
-import Box from './components/Box/';
-import Menu from './components/Menu';
-import Display from './components/Display/';
-import Container from './components/Container';
+import Box from './components/Box/index';
+import Menu from './components/Menu/index';
+import Display from './components/Display/index';
+import Container from './components/Container/index';
 import getCurrentShape from './services/getCurrentShape';
+import Filters from './components/Filters/';
 
 const initialState = (context) => ({
 	currentShape: getCurrentShape(context),
 	histories: [],
-	filteredShape: getCurrentShape(context),
+	filter: {
+		color: 'any',
+		shape: 'any',
+		size: 'any',
+	},
 });
 
 const App = (context) => {
@@ -22,6 +27,7 @@ const App = (context) => {
 			<Display { ...extendedContext }/>
 			<Container { ... extendedContext }/>
 			<Box { ...extendedContext }/>
+			<Filters { ...extendedContext }/>
 		</div>
 	);
 };

@@ -7,15 +7,15 @@ const SizeButtons = (context) => {
 		<option key={ key } value={ size }> { size} </option>);
 };
 
-const SizeFilterButton = (context) => {
+const SizeSelector = (context) => {
 	const { state, setState } = context;
-	const { filteredShape } = state;
+	const { filter } = state;
 
 	return (
 		<select onChange={ (event) => setState({
 			...state,
-			filteredShape: {
-				...filteredShape,
+			filter: {
+				...filter,
 				size: event.target.value,
 			},
 		}) }
@@ -25,4 +25,4 @@ const SizeFilterButton = (context) => {
 	);
 };
 
-export default SizeFilterButton;
+export default SizeSelector;

@@ -7,15 +7,15 @@ const ShapeButtons = (context) => {
 		<option key={ key } value={ shape }> { shape} </option>);
 };
 
-const ShapeFilterButton = (context) => {
+const ShapeSelector = (context) => {
 	const { setState, state } = context;
-	const { filteredShape } = state;
+	const { filter } = state;
 
 	return (
 		<select onChange={ (event) => setState({
 			...state,
-			filteredShape: {
-				...filteredShape,
+			filter: {
+				...filter,
 				shape: event.target.value,
 			},
 		}) }
@@ -25,4 +25,4 @@ const ShapeFilterButton = (context) => {
 	);
 };
 
-export default ShapeFilterButton;
+export default ShapeSelector;
