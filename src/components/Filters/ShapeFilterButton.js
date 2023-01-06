@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ShapeButtons = (context) => {
-	const { config: { filterShapes }} = context;
+	const { config: { filters: { shapes }}} = context;
 
-	return filterShapes.map((shape, key) =>
+	return shapes.map((shape, key) =>
 		<option key={ key } value={ shape }> { shape} </option>);
 };
 

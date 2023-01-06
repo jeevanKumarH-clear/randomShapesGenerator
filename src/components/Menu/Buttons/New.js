@@ -1,7 +1,7 @@
 import React from 'react';
-import getCurrentShape from '../services/getCurrentShape';
+import getCurrentShape from '../../../services/getCurrentShape';
 
-const NewButton = (context) => {
+const New = (context) => {
 	const { state, setState } = context;
 
 	return (
@@ -15,4 +15,4 @@ const NewButton = (context) => {
 		</button>);
 };
 
-export default NewButton;
+export default New;

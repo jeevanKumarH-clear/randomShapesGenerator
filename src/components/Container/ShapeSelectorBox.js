@@ -1,5 +1,5 @@
 import React from 'react';
-import Shape from './Shape';
+import Shape from '../Shape';
 
 const isActive = (context) => {
 	const { state:
@@ -7,7 +7,7 @@ const isActive = (context) => {
 
 	return id === currentShape;
 };
-const ShapeValue = (context) => {
+const ShapeSelectorBox = (context) => {
 	const { state, setState, data: history, config: { sizes }} = context;
 
 	return (
@@ -29,4 +29,4 @@ const ShapeValue = (context) => {
 		</div>);
 };
 
-export default ShapeValue;
+export default ShapeSelectorBox;

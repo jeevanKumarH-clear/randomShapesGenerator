@@ -1,5 +1,5 @@
 import React from 'react';
-import ShapeButtons from './ShapeButtons';
+import Shape from './Options/Shape';
 
 const isCurrentShape = (context) => {
 	const { state: { currentShape }, data: shape } = context;
@@ -7,7 +7,7 @@ const isCurrentShape = (context) => {
 	return currentShape.shape === shape ;
 };
 
-const ShapeButton = (context) => {
+const ShapeSelector = (context) => {
 	const { setState, state } = context;
 	const { currentShape } = state;
 
@@ -22,9 +22,9 @@ const ShapeButton = (context) => {
 					},
 				}) } }
 		>
-			<ShapeButtons { ...context }/>
+			<Shape { ...context }/>
 		</select>
 	);
 };
 
-export default ShapeButton;
+export default ShapeSelector;

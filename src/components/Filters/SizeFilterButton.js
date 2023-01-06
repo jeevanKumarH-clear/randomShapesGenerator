@@ -1,9 +1,9 @@
 import React from 'react';
 
 const SizeButtons = (context) => {
-	const { config: { filterSizes }} = context;
+	const { config: { filters: { sizes }}} = context;
 
-	return filterSizes.map((size, key) =>
+	return sizes.map((size, key) =>
 		<option key={ key } value={ size }> { size} </option>);
 };
 

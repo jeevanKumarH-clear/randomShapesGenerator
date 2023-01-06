@@ -1,11 +1,9 @@
 import { React, useState } from 'react';
 import './App.scss';
-import Box from './components/Box';
-import Buttons from './components/Buttons';
-import Display from './components/Display';
-import FilterButtons from './components/FilterButtons';
-import FilterShape from './components/FilterShape';
-import ShapeValues from './components/ShapeValues';
+import Box from './components/Box/';
+import Menu from './components/Menu';
+import Display from './components/Display/';
+import Container from './components/Container';
 import getCurrentShape from './services/getCurrentShape';
 
 const initialState = (context) => ({
@@ -20,12 +18,10 @@ const App = (context) => {
 
 	return (
 		<div>
-			<Buttons { ...extendedContext }/>
+			<Menu { ...extendedContext }/>
 			<Display { ...extendedContext }/>
-			<ShapeValues { ... extendedContext }/>
+			<Container { ... extendedContext }/>
 			<Box { ...extendedContext }/>
-			<FilterButtons { ...extendedContext }/>
-			<FilterShape { ...extendedContext }/>
 		</div>
 	);
 };

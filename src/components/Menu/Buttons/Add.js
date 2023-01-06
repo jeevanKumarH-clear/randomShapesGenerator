@@ -1,7 +1,7 @@
 import React from 'react';
-import getShapeId from '../services/getShapeId';
+import getShapeId from '../../../services/getShapeId';
 
-const AddButton = (context) => {
+const Add = (context) => {
 	const { state, setState } = context;
 	const { histories } = state;
 
@@ -17,4 +17,4 @@ const AddButton = (context) => {
 		</button>);
 };
 
-export default AddButton;
+export default Add;

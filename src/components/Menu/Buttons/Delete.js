@@ -1,8 +1,8 @@
 import React from 'react';
-import isItemSelected from '../services/isItemSelected';
-import remove from '../services/removeShape';
+import isItemSelected from '../../../services/isItemSelected';
+import remove from '../../../services/removeShape';
 
-const DeleteButton = (context) => {
+const Delete = (context) => {
 	const { state, setState } = context;
 
 	return (
@@ -15,4 +15,4 @@ const DeleteButton = (context) => {
 		</button>);
 };
 
-export default DeleteButton;
+export default Delete;

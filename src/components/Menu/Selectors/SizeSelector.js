@@ -1,5 +1,5 @@
 import React from 'react';
-import SizeButtons from './SizeButtons';
+import Size from './Options/Size';
 
 const isCurrentSize = (context) => {
 	const { state: { currentShape }, data: size } = context;
@@ -7,7 +7,7 @@ const isCurrentSize = (context) => {
 	return currentShape.size === size ;
 };
 
-const SizeButton = (context) => {
+const SizeSelector = (context) => {
 	const { state, setState } = context;
 	const { currentShape } = state;
 
@@ -19,9 +19,9 @@ const SizeButton = (context) => {
 					currentShape: { ...currentShape, size: event.target.value },
 				}) } }
 		>
-			<SizeButtons { ...context }/>
+			<Size { ...context }/>
 		</select>
 	);
 };
 
-export default SizeButton;
+export default SizeSelector;
