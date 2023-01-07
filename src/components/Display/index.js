@@ -5,7 +5,7 @@ const Display = (context) => {
 		{ currentShape: { color, shape, size }, selectedId }} = context;
 
 	return (
-		<div>
+		<div className="display">
 			<span> {size} </span>
 			<span> {color} </span>
 			<span> {shape} </span>

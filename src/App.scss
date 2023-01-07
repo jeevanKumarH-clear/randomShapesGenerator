@@ -9,7 +9,7 @@
 .currentShape{
 	position: absolute;
 	top: 25%;
-	left: 35%;
+	left: 40%;
 }
 
 .selectedShape{
@@ -21,7 +21,7 @@
 .box{
 	position: absolute;
 	top: 15%;
-	left:35%;
+	left:32%;
 	border: 1px solid;
 	height: 30%;
 	width: 30%;
@@ -57,4 +57,10 @@
 	position: absolute;
 	top: 60%;
 	left: 45%;
+}
+
+.display {
+	position: absolute;
+	top: 55%;
+	left: 43%;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import getCurrentShape from '../../../services/getCurrentShape';
+import getRandomShape from '../../../services/getCurrentShape';
 
 const New = (context) => {
 	const { state, setState } = context;
@@ -8,7 +8,7 @@ const New = (context) => {
 		<button
 			onClick={ () => setState({
 				...state,
-				currentShape: getCurrentShape(context),
+				currentShape: getRandomShape(context),
 			}) }
 		>
 			New

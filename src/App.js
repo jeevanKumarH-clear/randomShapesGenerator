@@ -4,11 +4,11 @@ import Box from './components/Box/index';
 import Menu from './components/Menu/index';
 import Display from './components/Display/index';
 import Container from './components/Container/index';
-import getCurrentShape from './services/getCurrentShape';
+import getRandomShape from './services/getCurrentShape';
 import Filters from './components/Filters/';
 
 const initialState = (context) => ({
-	currentShape: getCurrentShape(context),
+	currentShape: getRandomShape(context),
 	histories: [],
 	filter: {
 		color: 'any',
