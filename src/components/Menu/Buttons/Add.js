@@ -9,7 +9,6 @@ const Add = (context) => {
 		<button
 			onClick={ () => setState({
 				...state,
-				currentShape: getShapeId(context),
 				histories: [...histories, getShapeId(context)],
 			}) }
 		>

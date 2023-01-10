@@ -1,4 +1,6 @@
 import React from 'react';
+import SelectedShape from '../../services/SelectedShape';
+import UnselectedShape from '../../services/UnSelectedShape';
 import Shape from '../Shape';
 
 const isActive = (context) => {
@@ -9,22 +11,20 @@ const isActive = (context) => {
 };
 
 const ShapeSelectorBox = (context) => {
-	const { state, setState, data: history, config: { sizes }} = context;
+	const { data: history, config: { sizes }} = context;
 
 	return (
 		<div
-			style={ {
-				width: sizes[history.size],
-				marginTop: '5%',
-			} }
+
+			style={ { width: sizes[history.size], marginTop: '5%' } }
 			{
-				...{ className: isActive(context)
-				&& 'histories',
-				onClick: () => setState({
-					...state,
-					selectedId: history.id,
-					currentShape: history,
-				}) } }
+				...{
+					className: isActive(context) && 'histories',
+					onClick: () => (isActive(context)
+						? UnselectedShape(context)
+						: SelectedShape(context)),
+				} }
+
 		>
 			<Shape { ...{ ...context, data: history } }/>
 		</div>);

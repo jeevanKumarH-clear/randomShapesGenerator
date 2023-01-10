@@ -24,10 +24,10 @@ const App = (context) => {
 	return (
 		<div>
 			<Menu { ...extendedContext }/>
+			<Filters { ...extendedContext }/>
 			<Display { ...extendedContext }/>
 			<Container { ... extendedContext }/>
 			<Box { ...extendedContext }/>
-			<Filters { ...extendedContext }/>
 		</div>
 	);
 };
