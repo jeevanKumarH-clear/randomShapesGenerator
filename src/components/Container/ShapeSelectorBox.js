@@ -4,10 +4,9 @@ import UnselectedShape from '../../services/UnSelectedShape';
 import Shape from '../Shape';
 
 const isActive = (context) => {
-	const { state:
-		{ currentShape: { id: currentShape }}, data: { id }} = context;
+	const { state: { currentShape }, data: { id }} = context;
 
-	return id === currentShape;
+	return id === currentShape.id;
 };
 
 const ShapeSelectorBox = (context) => {

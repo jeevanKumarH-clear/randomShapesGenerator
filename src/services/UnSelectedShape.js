@@ -1,11 +1,11 @@
 const UnselectedShape = (context) => {
-	const { state, setState } = context;
-	const { data: { color, size, shape }} = context;
+	const { state, setState, data } = context;
 
 	return setState({
 		...state,
 		currentShape: {
-			color, size, shape,
+			...data,
+			id: null,
 		},
 	});
 };
