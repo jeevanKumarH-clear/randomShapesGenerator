@@ -19,7 +19,6 @@ const ColorSelector = (context) => {
 					currentShape: {
 						...currentShape,
 						color: event.target.value,
-
 					},
 				}) } }
 		><Color { ...context }/>

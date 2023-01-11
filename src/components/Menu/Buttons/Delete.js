@@ -1,21 +1,22 @@
 import React from 'react';
-import getRandomShape from '../../../services/getCurrentShape';
-import isItemSelected from '../../../services/isItemSelected';
-import remove from '../../../services/removeShape';
+import ShapeManager from '../../../services/ShapeManager';
 
 const Delete = (context) => {
 	const { state, setState } = context;
 
 	return (
 		<button
-			disabled={ isItemSelected(context) }
+			disabled={ ShapeManager.isItemSelected(context) }
 			onClick={ () => setState({
 				...state,
-				currentShape: getRandomShape(context),
-				histories: remove(context),
+				currentShape: {
+					shape: 'square',
+					color: 'blue',
+					size: 'small',
+				},
+				histories: ShapeManager.remove(context),
 			}) }
-		>
-			Delete
+		> Delete
 		</button>);
 };
 

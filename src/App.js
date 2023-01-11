@@ -1,18 +1,14 @@
-/* eslint-disable no-magic-numbers */
-/* eslint-disable max-lines-per-function */
 import { React, useState } from 'react';
 import './App.scss';
 import Box from './components/Box/index';
 import Menu from './components/Menu/index';
 import Display from './components/Display/index';
 import Container from './components/Container/index';
-import getRandomShape from './services/getCurrentShape';
 import Filters from './components/Filters/';
-
-const timeInterval = 1000;
+import ShapeManager from './services/ShapeManager';
 
 const initialState = (context) => ({
-	currentShape: getRandomShape(context),
+	currentShape: ShapeManager.getRandomShape(context),
 	histories: [],
 	filter: {
 		color: 'any',
@@ -26,23 +22,15 @@ const App = (context) => {
 	const extendedContext = { ...context, state, setState };
 	const { once } = context;
 
-	once(() => setInterval(() => setState((prevState) => (
-		{
-			...prevState,
-			histories: prevState.histories.length < 5
-				? [...prevState.histories, getRandomShape(context)]
-				: prevState.histories,
-		})), timeInterval));
+	once(() => ShapeManager.autoShapeGenerator(extendedContext));
 
-	return (
-		<div>
-			<Menu { ...extendedContext }/>
-			<Filters { ...extendedContext }/>
-			<Display { ...extendedContext }/>
-			<Container { ...extendedContext }/>
-			<Box { ...extendedContext }/>
-		</div>
-	);
+	return <div>
+		<Menu { ...extendedContext }/>
+		<Filters { ...extendedContext }/>
+		<Display { ...extendedContext }/>
+		<Container { ...extendedContext }/>
+		<Box { ...extendedContext }/>
+	</div>;
 };
 
 export default App;

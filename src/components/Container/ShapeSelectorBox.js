@@ -1,6 +1,5 @@
 import React from 'react';
-import SelectedShape from '../../services/SelectedShape';
-import UnselectedShape from '../../services/UnSelectedShape';
+import ShapeManager from '../../services/ShapeManager';
 import Shape from '../Shape';
 
 const isActive = (context) => {
@@ -14,16 +13,14 @@ const ShapeSelectorBox = (context) => {
 
 	return (
 		<div
-
 			style={ { width: sizes[history.size], marginTop: '5%' } }
 			{
 				...{
 					className: isActive(context) && 'histories',
 					onClick: () => (isActive(context)
-						? UnselectedShape(context)
-						: SelectedShape(context)),
+						? ShapeManager.UnselectedShape(context)
+						: ShapeManager.SelectedShape(context)),
 				} }
-
 		>
 			<Shape { ...{ ...context, data: history } }/>
 		</div>);

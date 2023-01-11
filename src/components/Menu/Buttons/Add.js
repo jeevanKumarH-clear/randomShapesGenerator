@@ -1,5 +1,5 @@
 import React from 'react';
-import getShapeId from '../../../services/getShapeId';
+import ShapeManager from '../../../services/ShapeManager';
 
 const Add = (context) => {
 	const { state, setState } = context;
@@ -9,10 +9,9 @@ const Add = (context) => {
 		<button
 			onClick={ () => setState({
 				...state,
-				histories: [...histories, getShapeId(context)],
+				histories: [...histories, ShapeManager.getShapeId(context)],
 			}) }
-		>
-			Add
+		> Add
 		</button>);
 };
 

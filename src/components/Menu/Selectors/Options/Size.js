@@ -1,5 +1,5 @@
-import { keys } from '@laufire/utils/lib';
 import React from 'react';
+import { keys } from '@laufire/utils/lib';
 
 const Size = (context) => {
 	const { config: { sizes }} = context;

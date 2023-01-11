@@ -1,5 +1,5 @@
-import { rndValue } from '@laufire/utils/random';
 import React from 'react';
+import { rndValue } from '@laufire/utils/random';
 
 const Random = (context) => {
 	const { state, setState } = context;
@@ -10,8 +10,7 @@ const Random = (context) => {
 			...state,
 			currentShape: rndValue(histories),
 		}) }
-		>
-			Random
+		> Random
 		</button>);
 };
 
