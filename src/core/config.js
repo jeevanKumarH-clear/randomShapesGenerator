@@ -7,6 +7,8 @@ const config = {
 		large: 150,
 	},
 	idLength: 5,
+	maxLength: 5,
+	timeInterval: 1000,
 	filters: {
 		shapes: ['any', 'circle', 'square'],
 		colors: ['any', 'red', 'blue'],

@@ -1,15 +1,13 @@
 import { keys } from '@laufire/utils/collection';
 import { rndString, rndValue } from '@laufire/utils/random';
-/* eslint-disable no-magic-numbers */
 
 const autoShapeGenerator = (context) => {
-	const { setState } = context;
-	const timeInterval = 1000;
+	const { setState, config: { timeInterval }} = context;
 
 	return setInterval(() => setState((prevState) => (
 		{
 			...prevState,
-			histories: prevState.histories.length < 5
+			histories: prevState.histories.length < prevState.maxLength
 				? [...prevState.histories, getRandomShape(context)]
 				: prevState.histories,
 		})), timeInterval);

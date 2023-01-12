@@ -6,16 +6,22 @@ import Display from './components/Display/index';
 import Container from './components/Container/index';
 import Filters from './components/Filters/';
 import ShapeManager from './services/ShapeManager';
+import Input from './components/Input';
 
-const initialState = (context) => ({
-	currentShape: ShapeManager.getShape(context),
-	histories: [],
-	filter: {
-		color: 'any',
-		shape: 'any',
-		size: 'any',
-	},
-});
+const initialState = (context) => {
+	const { config: maxLength } = context;
+
+	return {
+		currentShape: ShapeManager.getShape(context),
+		histories: [],
+		filter: {
+			color: 'any',
+			shape: 'any',
+			size: 'any',
+		},
+		shapeLength: maxLength,
+	};
+};
 
 const App = (context) => {
 	const [state, setState] = useState(initialState(context));
@@ -30,6 +36,7 @@ const App = (context) => {
 		<Display { ...extendedContext }/>
 		<Container { ...extendedContext }/>
 		<Box { ...extendedContext }/>
+		<Input { ...extendedContext }/>
 	</div>;
 };
 
