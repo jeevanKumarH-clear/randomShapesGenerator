@@ -2,27 +2,24 @@ import React from 'react';
 import ShapeManager from '../../services/ShapeManager';
 import Shape from '../Shape';
 
-const isActive = (context) => {
-	const { state: { currentShape }, data: { id }} = context;
-
-	return id === currentShape.id;
-};
-
 const ShapeSelectorBox = (context) => {
-	const { data: history, config: { sizes }} = context;
+	const { config: { sizes },
+		state: { currentShape },
+		data: { id, size }} = context;
+
+	const isActive = id === currentShape.id;
 
 	return (
 		<div
-			style={ { width: sizes[history.size], marginTop: '5%' } }
+			style={ { width: sizes[size], marginTop: '5%' } }
 			{
 				...{
-					className: isActive(context) && 'histories',
-					onClick: () => (isActive(context)
-						? ShapeManager.UnselectedShape(context)
-						: ShapeManager.SelectedShape(context)),
+					className: isActive && 'histories',
+					onClick: () => ShapeManager
+						.toggleShape({ ...context, isActive }),
 				} }
 		>
-			<Shape { ...{ ...context, data: history } }/>
+			<Shape { ...context }/>
 		</div>);
 };
 

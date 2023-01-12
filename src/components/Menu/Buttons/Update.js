@@ -10,6 +10,7 @@ const Update = (context) => {
 			onClick={ () => setState({
 				...state,
 				histories: ShapeManager.updateShape(context),
+				currentShape: ShapeManager.getShape(context),
 			}) }
 		> Update
 		</button>);

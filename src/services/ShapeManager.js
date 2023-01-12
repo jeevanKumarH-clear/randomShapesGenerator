@@ -61,6 +61,14 @@ const updateShape = ({ state: { histories, currentShape }}) =>
 	histories.map((history) =>
 		(history.id === currentShape.id ? currentShape : history));
 
+const toggleShape = (context) => {
+	const { isActive } = context;
+
+	return isActive
+		? ShapeManager.UnselectedShape(context)
+		: ShapeManager.SelectedShape(context);
+};
+
 const ShapeManager = {
 	autoShapeGenerator,
 	getFilteredShapes,
@@ -72,6 +80,7 @@ const ShapeManager = {
 	updateShape,
 	remove,
 	SelectedShape,
+	toggleShape,
 };
 
 export default ShapeManager;
