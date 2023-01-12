@@ -9,11 +9,7 @@ const Delete = (context) => {
 			disabled={ ShapeManager.isItemSelected(context) }
 			onClick={ () => setState({
 				...state,
-				currentShape: {
-					shape: 'square',
-					color: 'blue',
-					size: 'small',
-				},
+				currentShape: ShapeManager.getShape(context),
 				histories: ShapeManager.remove(context),
 			}) }
 		> Delete
