@@ -8,7 +8,7 @@ import Filters from './components/Filters/';
 import ShapeManager from './services/ShapeManager';
 
 const initialState = (context) => ({
-	currentShape: ShapeManager.getRandomShape(context),
+	currentShape: ShapeManager.getShape(context),
 	histories: [],
 	filter: {
 		color: 'any',

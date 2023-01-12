@@ -6,12 +6,12 @@ import Random from './Random';
 import Update from './Update';
 
 const Buttons = (context) =>
-	<div>
-		<div><Add { ...context }/></div>
-		<div><Delete { ...context }/></div>
-		<div><New { ...context }/></div>
-		<div><Update { ...context }/></div>
-		<div><Random { ...context }/></div>
+	<div className="buttons">
+		<Add { ...context }/>
+		<Delete { ...context }/>
+		<New { ...context }/>
+		<Update { ...context }/>
+		<Random { ...context }/>
 	</div>;
 
 export default Buttons;

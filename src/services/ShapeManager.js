@@ -27,6 +27,12 @@ const getRandomShape = ({ config: { colors, shapes, sizes, idLength }}) => ({
 	id: rndString(idLength),
 });
 
+const getShape = ({ config: { colors, shapes, sizes }}) => ({
+	color: rndValue(colors),
+	shape: rndValue(shapes),
+	size: rndValue(keys(sizes)),
+});
+
 const getShapeId = ({ state: { currentShape }, config: { idLength }}) =>
 	({
 		...currentShape,
@@ -59,6 +65,7 @@ const ShapeManager = {
 	autoShapeGenerator,
 	getFilteredShapes,
 	getRandomShape,
+	getShape,
 	getShapeId,
 	isItemSelected,
 	UnselectedShape,

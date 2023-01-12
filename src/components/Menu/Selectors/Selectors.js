@@ -4,10 +4,10 @@ import ShapeSelector from './ShapeSelector';
 import SizeSelector from './SizeSelector';
 
 const Selectors = (context) =>
-	<div>
-		<div><ColorSelector { ...context }/></div>
-		<div><ShapeSelector { ...context }/></div>
-		<div><SizeSelector { ...context }/></div>
+	<div className="selectors">
+		<ColorSelector { ...context }/>
+		<ShapeSelector { ...context }/>
+		<SizeSelector { ...context }/>
 	</div>;
 
 export default Selectors;

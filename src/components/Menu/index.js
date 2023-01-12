@@ -3,9 +3,9 @@ import Buttons from './Buttons/Buttons';
 import Selectors from './Selectors/Selectors';
 
 const Menu = (context) =>
-	<div className="buttons">
-		<Buttons { ...context }/>
+	<div>
 		<Selectors { ...context }/>
+		<Buttons { ...context }/>
 	</div>;
 
 export default Menu;
