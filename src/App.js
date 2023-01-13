@@ -14,12 +14,13 @@ const initialState = (context) => {
 	return {
 		currentShape: ShapeManager.getShape(context),
 		histories: [],
+		shapeLength: maxLength,
+		pauseButton: 'pause',
 		filter: {
 			color: 'any',
 			shape: 'any',
 			size: 'any',
 		},
-		shapeLength: maxLength,
 	};
 };
 

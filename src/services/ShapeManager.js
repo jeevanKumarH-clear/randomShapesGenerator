@@ -67,6 +67,14 @@ const toggleShape = (context) => {
 		: ShapeManager.SelectedShape(context);
 };
 
+const toggleButton = (context) => {
+	const { state: { pauseButton }} = context;
+
+	return pauseButton === 'pause'
+		? 'resume'
+		: 'pause';
+};
+
 const ShapeManager = {
 	autoShapeGenerator,
 	getFilteredShapes,
@@ -79,6 +87,7 @@ const ShapeManager = {
 	remove,
 	SelectedShape,
 	toggleShape,
+	toggleButton,
 };
 
 export default ShapeManager;
