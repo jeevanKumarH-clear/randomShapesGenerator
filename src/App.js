@@ -9,7 +9,7 @@ import ShapeManager from './services/ShapeManager';
 import Input from './components/Input';
 
 const initialState = (context) => {
-	const { config: maxLength } = context;
+	const { config: { maxLength }} = context;
 
 	return {
 		currentShape: ShapeManager.getShape(context),

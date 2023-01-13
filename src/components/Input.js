@@ -9,7 +9,7 @@ const Input = (context) => {
 			type="text"
 			onChange={ (event) => setState({
 				...state,
-				maxLength: event.target.value,
+				shapeLength: event.target.value,
 			}) }
 		/>
 	</div>;

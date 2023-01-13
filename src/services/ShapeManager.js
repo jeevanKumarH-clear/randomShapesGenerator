@@ -4,12 +4,12 @@ import { rndString, rndValue } from '@laufire/utils/random';
 const autoShapeGenerator = (context) => {
 	const { setState, config: { timeInterval }} = context;
 
-	return setInterval(() => setState((prevState) => (
+	return setInterval(() => setState((newState) => (
 		{
-			...prevState,
-			histories: prevState.histories.length < prevState.maxLength
-				? [...prevState.histories, getRandomShape(context)]
-				: prevState.histories,
+			...newState,
+			histories: newState.histories.length < newState.shapeLength
+				? [...newState.histories, getRandomShape(context)]
+				: newState.histories,
 		})), timeInterval);
 };
 
