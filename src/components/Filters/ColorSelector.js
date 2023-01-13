@@ -4,7 +4,7 @@ const Colors = (context) => {
 	const { config: { filters: { colors }}} = context;
 
 	return colors.map((color, key) =>
-		<option key={ key } value={ color }> { color} </option>);
+		<option key={ key } value={ color }> {color} </option>);
 };
 
 const ColorSelector = (context) => {
@@ -12,18 +12,16 @@ const ColorSelector = (context) => {
 	const { filter } = state;
 
 	return (
-		<select
-			value={ filter.color }
-			onChange={ (event) => setState({
-				...state,
-				filter: {
-					...filter,
-					color: event.target.value,
-				},
-			}) }
-		>
-			<Colors { ...context }/>
-		</select>);
+		<select onChange={ (event) => setState({
+			...state,
+			filter: {
+				...filter,
+				color: event.target.value,
+			},
+		}) }
+		><Colors { ...context }/>
+		</select>
+	);
 };
 
 export default ColorSelector;

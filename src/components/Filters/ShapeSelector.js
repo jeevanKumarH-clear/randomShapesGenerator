@@ -19,8 +19,7 @@ const ShapeSelector = (context) => {
 				shape: event.target.value,
 			},
 		}) }
-		>
-			<ShapeButtons { ...context }/>
+		><ShapeButtons { ...context }/>
 		</select>
 	);
 };

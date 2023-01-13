@@ -1,9 +1,10 @@
-import { keys } from '@laufire/utils/lib';
 import React from 'react';
-import shapeComponents from '../../../../data/shapeComponents';
 
-const Shape = () =>
-	keys(shapeComponents).map((shape, key) =>
+const Shape = (context) => {
+	const { config: { shapes }} = context;
+
+	return shapes.map((shape, key) =>
 		<option key={ key } value={ shape }> { shape} </option>);
+};
 
 export default Shape;
