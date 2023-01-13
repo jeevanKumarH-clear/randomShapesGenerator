@@ -11,15 +11,13 @@ const ShapeSelectorBox = (context) => {
 
 	return (
 		<div
-			style={ { width: sizes[size], marginTop: '5%' } }
-			{
-				...{
-					className: isActive && 'histories',
-					onClick: () => ShapeManager
-						.toggleShape({ ...context, isActive }),
-				} }
-		>
-			<Shape { ...context }/>
+			{ ...{
+				className: isActive && 'histories',
+				style: { width: sizes[size], marginTop: '5%' },
+				onClick: () => ShapeManager
+					.toggleShape({ ...context, isActive }),
+			} }
+		><Shape { ...context }/>
 		</div>);
 };
 

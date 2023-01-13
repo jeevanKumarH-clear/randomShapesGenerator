@@ -6,9 +6,7 @@ const Container = (context) => {
 	const filteredShapes = ShapeManager.getFilteredShapes(context);
 
 	return (
-		<div
-			className="container"
-		>
+		<div className="container">
 			{
 				filteredShapes.map((history, key) =>
 					<ShapeSelectorBox
