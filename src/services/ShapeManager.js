@@ -8,6 +8,7 @@ const autoShapeGenerator = (context) => {
 		{
 			...newState,
 			histories: newState.histories.length < newState.shapeLength
+			&& newState.pauseButton === 'pause'
 				? [...newState.histories, getRandomShape(context)]
 				: newState.histories,
 		})), timeInterval);
