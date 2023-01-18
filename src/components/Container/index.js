@@ -1,19 +1,16 @@
 import React from 'react';
-import ShapeSelectorBox from './ShapeSelectorBox';
 import ShapeManager from '../../services/ShapeManager';
+import AlertMsg from './AlertMsg';
+import FilteredShapes from './FilteredShapes';
 
 const Container = (context) => {
 	const filteredShapes = ShapeManager.getFilteredShapes(context);
 
 	return (
 		<div className="container">
-			{
-				filteredShapes.map((history, key) =>
-					<ShapeSelectorBox
-						key={ key }
-						{ ...{ ...context, data: history } }
-					/>)
-			}
+			{ ShapeManager.hasShapes(context)
+				? <AlertMsg/>
+				: <FilteredShapes { ...{ ...context, data: filteredShapes } }/>}
 		</div>);
 };
 
