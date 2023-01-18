@@ -65,6 +65,9 @@ const toggleShape = (context) => {
 		: ShapeManager.SelectedShape(context);
 };
 
+const displayText = ({ state: { histories }}) =>
+	(histories.length === 0 ? 'Add some shapes' : '');
+
 const ShapeManager = {
 	autoShapeGenerator,
 	getFilteredShapes,
@@ -77,6 +80,7 @@ const ShapeManager = {
 	remove,
 	SelectedShape,
 	toggleShape,
+	displayText,
 };
 
 export default ShapeManager;
