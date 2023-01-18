@@ -3,23 +3,23 @@ import ShapeManager from '../../services/ShapeManager';
 import Shape from '../Shape';
 
 const ShapeSelectorBox = (context) => {
-	const { config: { sizeValues },
+	const { config: { sizeValues, widthMultiplier },
 		state: { currentShape },
-		data: { id, size }} = context;
+		data: { id, size, shape }} = context;
 
 	const isActive = id === currentShape.id;
 
 	return (
 		<div
-			{ ...{
-				className: isActive && 'histories',
+			{ ...{ className: isActive && 'histories',
 				style: {
-					width: sizeValues[size],
+					width: shape === 'rectangle'
+						? sizeValues[size] * widthMultiplier
+						: sizeValues[size],
 					marginTop: '5%',
 				},
 				onClick: () => ShapeManager
-					.toggleShape({ ...context, isActive }),
-			} }
+					.toggleShape({ ...context, isActive }) } }
 		><Shape { ...context }/>
 		</div>);
 };
