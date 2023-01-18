@@ -8,7 +8,7 @@ const New = (context) => {
 		<button
 			onClick={ () => setState({
 				...state,
-				currentShape: ShapeManager.getRandomShape(context),
+				currentShape: ShapeManager.getShape(context),
 			}) }
 		> New
 		</button>);
