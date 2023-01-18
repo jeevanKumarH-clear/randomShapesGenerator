@@ -18,11 +18,9 @@ const getFilteredShapes = ({ state: { histories, filter }}) =>
 		filter[shapeProp] === 'any'
 		|| history[shapeProp] === filter[shapeProp]));
 
-const getRandomShape = ({ config: { colors, shapes, sizes, idLength }}) => ({
-	color: rndValue(colors),
-	shape: rndValue(shapes),
-	size: rndValue(sizes),
-	id: rndString(idLength),
+const getRandomShape = (context) => ({
+	...getShape(context),
+	id: rndString(context.config.idLength),
 });
 
 const getShape = ({ config: { colors, shapes, sizes }}) => ({
