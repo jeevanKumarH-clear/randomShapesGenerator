@@ -13,7 +13,10 @@ const ShapeSelectorBox = (context) => {
 		<div
 			{ ...{
 				className: isActive && 'histories',
-				style: { width: sizeValues[size], marginTop: '5%' },
+				style: {
+					width: sizeValues[size],
+					marginTop: '5%',
+				},
 				onClick: () => ShapeManager
 					.toggleShape({ ...context, isActive }),
 			} }
