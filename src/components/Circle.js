@@ -1,15 +1,15 @@
 import { React } from 'react';
 
 const Circle = (context) => {
-	const { config: { sizes },
+	const { config: { sizeValues },
 		data: { color, size }} = context;
 
 	return (
 		<div
 			className="circle"
 			style={ {
-				height: `${ sizes[size] }px`,
-				width: `${ sizes[size] }px`,
+				height: `${ sizeValues[size] }px`,
+				width: `${ sizeValues[size] }px`,
 				backgroundColor: color,
 			} }
 		/>);

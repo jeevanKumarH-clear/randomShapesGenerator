@@ -3,7 +3,7 @@ import ShapeManager from '../../services/ShapeManager';
 import Shape from '../Shape';
 
 const ShapeSelectorBox = (context) => {
-	const { config: { sizes },
+	const { config: { sizeValues },
 		state: { currentShape },
 		data: { id, size }} = context;
 
@@ -13,7 +13,7 @@ const ShapeSelectorBox = (context) => {
 		<div
 			{ ...{
 				className: isActive && 'histories',
-				style: { width: sizes[size], marginTop: '5%' },
+				style: { width: sizeValues[size], marginTop: '5%' },
 				onClick: () => ShapeManager
 					.toggleShape({ ...context, isActive }),
 			} }

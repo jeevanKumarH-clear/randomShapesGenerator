@@ -1,7 +1,8 @@
 const config = {
 	colors: ['red', 'blue'],
 	shapes: ['circle', 'square'],
-	sizes: {
+	sizes: ['small', 'medium', 'large'],
+	sizeValues: {
 		small: 50,
 		medium: 100,
 		large: 150,
@@ -9,11 +10,6 @@ const config = {
 	idLength: 5,
 	maxLength: 0,
 	timeInterval: 1000,
-	filters: {
-		shapes: ['any', 'circle', 'square'],
-		colors: ['any', 'red', 'blue'],
-		sizes: ['any', 'small', 'medium', 'large'],
-	},
 };
 
 export default config;

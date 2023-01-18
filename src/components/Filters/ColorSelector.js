@@ -1,14 +1,8 @@
 import React from 'react';
-
-const Colors = (context) => {
-	const { config: { filters: { colors }}} = context;
-
-	return colors.map((color, key) =>
-		<option key={ key } value={ color }> {color} </option>);
-};
+import Options from '../Menu/Selectors/Options/Options';
 
 const ColorSelector = (context) => {
-	const { setState, state } = context;
+	const { setState, state, config: { colors }} = context;
 	const { filter } = state;
 
 	return (
@@ -19,7 +13,7 @@ const ColorSelector = (context) => {
 				color: event.target.value,
 			},
 		}) }
-		><Colors { ...context }/>
+		><Options { ...{ ...context, data: ['any', ...colors] } }/>
 		</select>
 	);
 };

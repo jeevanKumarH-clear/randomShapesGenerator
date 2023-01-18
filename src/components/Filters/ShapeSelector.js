@@ -1,14 +1,8 @@
 import React from 'react';
-
-const ShapeButtons = (context) => {
-	const { config: { filters: { shapes }}} = context;
-
-	return shapes.map((shape, key) =>
-		<option key={ key } value={ shape }> { shape} </option>);
-};
+import Options from '../Menu/Selectors/Options/Options';
 
 const ShapeSelector = (context) => {
-	const { setState, state } = context;
+	const { setState, state, config: { shapes }} = context;
 	const { filter } = state;
 
 	return (
@@ -19,7 +13,7 @@ const ShapeSelector = (context) => {
 				shape: event.target.value,
 			},
 		}) }
-		><ShapeButtons { ...context }/>
+		><Options { ...{ ...context, data: ['any', ...shapes] } }/>
 		</select>
 	);
 };

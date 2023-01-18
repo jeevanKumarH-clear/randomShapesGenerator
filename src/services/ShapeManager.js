@@ -1,4 +1,3 @@
-import { keys } from '@laufire/utils/collection';
 import { rndString, rndValue } from '@laufire/utils/random';
 
 const autoShapeGenerator = (context) => {
@@ -8,7 +7,7 @@ const autoShapeGenerator = (context) => {
 		{
 			...newState,
 			histories: newState.histories.length < newState.shapeLength
-			&& newState.pauseButton === 'pause'
+			&& !newState.ispaused === true
 				? [...newState.histories, getRandomShape(context)]
 				: newState.histories,
 		})), timeInterval);
@@ -22,14 +21,14 @@ const getFilteredShapes = ({ state: { histories, filter }}) =>
 const getRandomShape = ({ config: { colors, shapes, sizes, idLength }}) => ({
 	color: rndValue(colors),
 	shape: rndValue(shapes),
-	size: rndValue(keys(sizes)),
+	size: rndValue(sizes),
 	id: rndString(idLength),
 });
 
 const getShape = ({ config: { colors, shapes, sizes }}) => ({
 	color: rndValue(colors),
 	shape: rndValue(shapes),
-	size: rndValue(keys(sizes)),
+	size: rndValue(sizes),
 });
 
 const getShapeId = ({ state: { currentShape }, config: { idLength }}) =>
@@ -68,14 +67,6 @@ const toggleShape = (context) => {
 		: ShapeManager.SelectedShape(context);
 };
 
-const toggleButton = (context) => {
-	const { state: { pauseButton }} = context;
-
-	return pauseButton === 'pause'
-		? 'resume'
-		: 'pause';
-};
-
 const ShapeManager = {
 	autoShapeGenerator,
 	getFilteredShapes,
@@ -88,7 +79,6 @@ const ShapeManager = {
 	remove,
 	SelectedShape,
 	toggleShape,
-	toggleButton,
 };
 
 export default ShapeManager;

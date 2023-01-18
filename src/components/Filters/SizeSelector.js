@@ -1,14 +1,8 @@
 import React from 'react';
-
-const SizeButtons = (context) => {
-	const { config: { filters: { sizes }}} = context;
-
-	return sizes.map((size, key) =>
-		<option key={ key } value={ size }> {size} </option>);
-};
+import Options from '../Menu/Selectors/Options/Options';
 
 const SizeSelector = (context) => {
-	const { state, setState } = context;
+	const { state, setState, config: { sizes }} = context;
 	const { filter } = state;
 
 	return (
@@ -19,7 +13,7 @@ const SizeSelector = (context) => {
 				size: event.target.value,
 			},
 		}) }
-		><SizeButtons { ...context }/>
+		><Options { ...{ ...context, data: ['any', ...sizes] } }/>
 		</select>
 	);
 };

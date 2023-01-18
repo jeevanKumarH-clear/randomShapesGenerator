@@ -1,8 +1,8 @@
 import React from 'react';
-import Size from './Options/Size';
+import Options from './Options/Options';
 
 const SizeSelector = (context) => {
-	const { state, setState } = context;
+	const { state, setState, config: { sizes }} = context;
 	const { currentShape } = state;
 
 	return (
@@ -15,7 +15,7 @@ const SizeSelector = (context) => {
 					},
 				}),
 			} }
-		><Size { ...context }/>
+		><Options { ...{ ...context, data: sizes } }/>
 		</select>
 	);
 };

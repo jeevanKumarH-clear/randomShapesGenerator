@@ -15,7 +15,7 @@ const initialState = (context) => {
 		currentShape: ShapeManager.getShape(context),
 		histories: [],
 		shapeLength: maxLength,
-		pauseButton: 'pause',
+		ispaused: false,
 		filter: {
 			color: 'any',
 			shape: 'any',

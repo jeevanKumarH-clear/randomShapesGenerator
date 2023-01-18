@@ -1,8 +1,8 @@
 import React from 'react';
-import Color from './Options/Color';
+import Options from './Options/Options';
 
 const ColorSelector = (context) => {
-	const { setState, state } = context;
+	const { setState, state, config: { colors }} = context;
 	const { currentShape } = state;
 
 	return (
@@ -15,7 +15,7 @@ const ColorSelector = (context) => {
 					},
 				}),
 			} }
-		><Color { ...context }/>
+		><Options { ...{ ...context, data: colors } }/>
 		</select>);
 };
 

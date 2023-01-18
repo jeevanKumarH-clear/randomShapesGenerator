@@ -1,8 +1,8 @@
 import React from 'react';
-import Shape from './Options/Shape';
+import Options from './Options/Options';
 
 const ShapeSelector = (context) => {
-	const { setState, state } = context;
+	const { setState, state, config: { shapes }} = context;
 	const { currentShape } = state;
 
 	return (
@@ -15,7 +15,7 @@ const ShapeSelector = (context) => {
 					},
 				}),
 			} }
-		><Shape { ...context }/>
+		><Options { ...{ ...context, data: shapes } }/>
 		</select>
 	);
 };
